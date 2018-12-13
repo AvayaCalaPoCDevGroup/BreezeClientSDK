@@ -171,5 +171,10 @@ namespace BreezeClientSDK
                 // Add code here to update the UI as appropriate.
             }
         }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
