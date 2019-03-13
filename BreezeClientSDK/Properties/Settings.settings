@@ -2,12 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BreezeClientSDK.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="sipcontroller" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sm-213.collaboratory.avaya.com</Value>
-    </Setting>
-    <Setting Name="sipdomain" Type="System.String" Scope="User">
-      <Value Profile="(Default)">collaboratory.avaya.com</Value>
-    </Setting>
     <Setting Name="puerto" Type="System.String" Scope="User">
       <Value Profile="(Default)">5061</Value>
     </Setting>
@@ -25,6 +19,12 @@
     </Setting>
     <Setting Name="uuid" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sipcontroller" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sip-na1.avaya.com</Value>
+    </Setting>
+    <Setting Name="sipdomain" Type="System.String" Scope="User">
+      <Value Profile="(Default)">net.avaya.com</Value>
     </Setting>
   </Settings>
 </SettingsFile>

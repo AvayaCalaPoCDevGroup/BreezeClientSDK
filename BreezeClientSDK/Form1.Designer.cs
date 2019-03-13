@@ -58,7 +58,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(248, 282);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
@@ -213,6 +213,7 @@
             this.save_btn.TabIndex = 9;
             this.save_btn.Text = "Guardar ajustes";
             this.save_btn.UseSelectable = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // tls_chk
             // 

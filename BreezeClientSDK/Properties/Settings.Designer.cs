@@ -25,30 +25,6 @@ namespace BreezeClientSDK.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sm-213.collaboratory.avaya.com")]
-        public string sipcontroller {
-            get {
-                return ((string)(this["sipcontroller"]));
-            }
-            set {
-                this["sipcontroller"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("collaboratory.avaya.com")]
-        public string sipdomain {
-            get {
-                return ((string)(this["sipdomain"]));
-            }
-            set {
-                this["sipdomain"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5061")]
         public string puerto {
             get {
@@ -116,6 +92,30 @@ namespace BreezeClientSDK.Properties {
             }
             set {
                 this["uuid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sip-na1.avaya.com")]
+        public string sipcontroller {
+            get {
+                return ((string)(this["sipcontroller"]));
+            }
+            set {
+                this["sipcontroller"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("net.avaya.com")]
+        public string sipdomain {
+            get {
+                return ((string)(this["sipdomain"]));
+            }
+            set {
+                this["sipdomain"] = value;
             }
         }
     }

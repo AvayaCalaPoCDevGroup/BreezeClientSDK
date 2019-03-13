@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BreezeClientSDK
 {
@@ -21,6 +22,7 @@ namespace BreezeClientSDK
             Console.WriteLine("Challenge SIP");
             if (challenge.FailureCount > 0)
             {
+                MessageBox.Show("Contraseñas incorrectas");
                 Console.WriteLine("Credenciales Rechazadas");
                 // This is credential request after login failure.
                 return;
@@ -34,6 +36,8 @@ namespace BreezeClientSDK
         public void OnCredentialAccepted(Challenge challenge)
         {
             Console.WriteLine("Credenciales Aceptadas");
+
+
         }
         public void OnAuthenticationChallengeCancelled(Challenge challenge)
         {
