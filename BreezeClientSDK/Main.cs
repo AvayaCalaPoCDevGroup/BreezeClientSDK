@@ -210,6 +210,8 @@ namespace BreezeClientSDK
             call.Established += new EventHandler(callDelegate.call_Established);
             call.Ended += new EventHandler<CallEndedEventArgs>(callDelegate.call_Ended);
             call.Subject = subject_out_txt.Text.ToString();
+            Console.WriteLine(call.Subject);
+
             call.Start();
 
         }
@@ -269,6 +271,7 @@ namespace BreezeClientSDK
                 {
                     MessageBox.Show("Asunto:" + e.Call.Subject);
                     e.Call.Accept();
+                  
 
                 }
 

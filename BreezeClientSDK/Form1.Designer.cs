@@ -56,10 +56,10 @@
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
+            this.metroTabControl1.Location = new System.Drawing.Point(23, 53);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(248, 282);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(248, 304);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -77,7 +77,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(240, 240);
+            this.metroTabPage1.Size = new System.Drawing.Size(240, 262);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Credenciales";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -86,9 +86,9 @@
             // 
             // login_btn
             // 
-            this.login_btn.Location = new System.Drawing.Point(0, 195);
+            this.login_btn.Location = new System.Drawing.Point(3, 220);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(237, 42);
+            this.login_btn.Size = new System.Drawing.Size(233, 42);
             this.login_btn.TabIndex = 7;
             this.login_btn.Text = "Iniciar Sesión";
             this.login_btn.UseSelectable = true;
@@ -98,7 +98,7 @@
             // 
             this.remember_chk.AutoSize = true;
             this.remember_chk.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.remember_chk.Location = new System.Drawing.Point(4, 137);
+            this.remember_chk.Location = new System.Drawing.Point(3, 195);
             this.remember_chk.Name = "remember_chk";
             this.remember_chk.Size = new System.Drawing.Size(215, 19);
             this.remember_chk.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.pass_txt.CustomButton.UseSelectable = true;
             this.pass_txt.CustomButton.Visible = false;
             this.pass_txt.Lines = new string[0];
-            this.pass_txt.Location = new System.Drawing.Point(4, 94);
+            this.pass_txt.Location = new System.Drawing.Point(3, 167);
             this.pass_txt.MaxLength = 32767;
             this.pass_txt.Name = "pass_txt";
             this.pass_txt.PasswordChar = '*';
@@ -150,7 +150,7 @@
             this.user_txt.CustomButton.UseSelectable = true;
             this.user_txt.CustomButton.Visible = false;
             this.user_txt.Lines = new string[0];
-            this.user_txt.Location = new System.Drawing.Point(4, 38);
+            this.user_txt.Location = new System.Drawing.Point(3, 111);
             this.user_txt.MaxLength = 32767;
             this.user_txt.Name = "user_txt";
             this.user_txt.PasswordChar = '\0';
@@ -168,7 +168,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(0, 72);
+            this.metroLabel2.Location = new System.Drawing.Point(3, 145);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(78, 19);
             this.metroLabel2.TabIndex = 3;
@@ -177,7 +177,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(0, 15);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 89);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(120, 19);
             this.metroLabel1.TabIndex = 2;

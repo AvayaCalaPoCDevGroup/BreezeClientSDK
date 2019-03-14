@@ -1,99 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BreezeClientSDK
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    partial class AboutBox1 : Form
     {
-  
-        public Form1()
+        public AboutBox1()
         {
             InitializeComponent();
-            //configsdk();
-
+            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            cargarajustes();
-        }
-
-
-        public void cargarajustes()
-        {
-            metroLabel4.Text = String.Format("Version {0}", AssemblyVersion);
-            bool rememberme;
-            bool checktls;
-            string extension;
-            string pass;
-            string sip;
-            string domain;
-            int port;
-
-
-            rememberme = Properties.Settings.Default.remember;
-            checktls = Properties.Settings.Default.tls;
-
-            if (rememberme == true)
-            {
-                extension = Properties.Settings.Default.usuario;
-                pass = Properties.Settings.Default.password;
-                user_txt.Text = extension;
-                pass_txt.Text = pass;
-
-            }
-            else
-            {
-                Console.WriteLine("Sin guardar datos");
-               
-            }
-            sip = Properties.Settings.Default.sipcontroller;
-            domain = Properties.Settings.Default.sipdomain;
-            port = Int32.Parse(Properties.Settings.Default.puerto);
-
-            sip_txt.Text = sip;
-            domain_txt.Text = domain;
-            puerto_txt.Text = port.ToString();
-            if (checktls == true)
-            {
-                tls_chk.Checked = true;
-            }
-            else
-            {
-                tls_chk.Checked = false;
-            }
-
-        }
-
-        public void guardarajustes()
-        {
-            Properties.Settings.Default.sipcontroller = sip_txt.Text;
-            Properties.Settings.Default.sipdomain = domain_txt.Text;
-            Properties.Settings.Default.puerto = puerto_txt.Text;
-            Properties.Settings.Default.tls = tls_chk.Checked;
-            Properties.Settings.Default.Save();
-
-        }
-
-
-        private void login_btn_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.usuario = user_txt.Text;
-            Properties.Settings.Default.password = pass_txt.Text;
-            Properties.Settings.Default.remember = remember_chk.Checked;
-            Properties.Settings.Default.Save();
-            Main form = new Main();
-            form.Show(); // or form.ShowDialog(this);
-
-        }
-
-        private void save_btn_Click(object sender, EventArgs e)
-        {
-            guardarajustes();
-        }
-
-
-        //Metodos
+        #region Assembly Attribute Accessors
 
         public string AssemblyTitle
         {
@@ -171,9 +100,11 @@ namespace BreezeClientSDK
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
-        //
+        #endregion
 
+        private void AboutBox1_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
