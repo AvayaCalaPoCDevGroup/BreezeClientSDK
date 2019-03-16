@@ -47,9 +47,11 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -66,6 +68,7 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.pictureBox1);
             this.metroTabPage1.Controls.Add(this.login_btn);
             this.metroTabPage1.Controls.Add(this.remember_chk);
             this.metroTabPage1.Controls.Add(this.pass_txt);
@@ -198,7 +201,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(240, 240);
+            this.metroTabPage2.Size = new System.Drawing.Size(240, 262);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Ajustes";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -361,6 +364,17 @@
             this.metroLabel4.TabIndex = 2;
             this.metroLabel4.Text = "Placeholder";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::BreezeClientSDK.Properties.Resources.Avaya_CALA_developers;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,6 +394,7 @@
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,6 +421,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox sip_txt;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

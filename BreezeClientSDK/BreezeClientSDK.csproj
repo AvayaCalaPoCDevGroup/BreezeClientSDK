@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>BreezeClientSDK.Program</StartupObject>
@@ -70,9 +70,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AvayaClientServices, Version=294.0.30.0, Culture=neutral, PublicKeyToken=5781f49e91035e75, processorArchitecture=x86">
+    <Reference Include="AvayaClientServices, Version=298.0.170.0, Culture=neutral, PublicKeyToken=5781f49e91035e75, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\AvayaClientServices.dll</HintPath>
+      <HintPath>.\AvayaClientServices.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -85,7 +85,7 @@
     </Reference>
     <Reference Include="scpmediadll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=12cce4305906aff1, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\scpmediadll.dll</HintPath>
+      <HintPath>.\scpmediadll.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -141,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="BreezeClientSDK_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -172,8 +173,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AvayaClientServices.dll" />
     <Content Include="libeay32.dll" />
+    <Content Include="Recursos\0e475bb9b17b3fa4f94f31fba1635b8f-telephone-call-icon-logo-by-vexels.png" />
+    <Content Include="Recursos\Avaya-CALA-developers.png" />
+    <Content Include="Recursos\e68891198b.png" />
+    <Content Include="Recursos\Hanging-Up-Icon-01-300x200.png" />
     <Content Include="rvVideoCodec.dll" />
+    <Content Include="scpmediadll.dll" />
     <Content Include="ssleay32.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

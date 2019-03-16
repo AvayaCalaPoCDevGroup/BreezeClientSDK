@@ -1,4 +1,5 @@
 ﻿using Avaya.ClientServices;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -264,8 +265,19 @@ namespace BreezeClientSDK
             {
                 if (e.Call.Subject.Length == 0)
                 {
-                    MessageBox.Show("Llamada de:" + e.Call.RemoteNumber + " \n Asunto:" + "");
-                    e.Call.Accept();
+
+                    DialogResult result = MessageBox.Show("Datos: \n " + "Numero:"+ e.Call.RemoteNumber + "\n Nombre: " + e.Call.RemoteDisplayName + "\n Asunto: " + e.Call.Subject , "Responder", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        e.Call.Accept();
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        e.Call.Ignore();
+                    }
+           
+
                 }
                 else
                 {
@@ -291,6 +303,9 @@ namespace BreezeClientSDK
 
         }
 
+        private void metroLabel4_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
