@@ -66,17 +66,19 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.call_status_lbl = new MetroFramework.Controls.MetroLabel();
+            this.number_call_lbl = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.remote_status_lbl = new MetroFramework.Controls.MetroLabel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.time_status_lbl = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -84,6 +86,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -451,13 +454,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.metroLabel14);
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.time_status_lbl);
             this.groupBox2.Controls.Add(this.metroLabel15);
-            this.groupBox2.Controls.Add(this.metroLabel12);
+            this.groupBox2.Controls.Add(this.remote_status_lbl);
             this.groupBox2.Controls.Add(this.metroLabel13);
-            this.groupBox2.Controls.Add(this.metroLabel10);
+            this.groupBox2.Controls.Add(this.number_call_lbl);
             this.groupBox2.Controls.Add(this.metroLabel11);
-            this.groupBox2.Controls.Add(this.metroLabel9);
+            this.groupBox2.Controls.Add(this.call_status_lbl);
             this.groupBox2.Controls.Add(this.metroLabel8);
             this.groupBox2.Location = new System.Drawing.Point(198, 94);
             this.groupBox2.Name = "groupBox2";
@@ -580,25 +584,25 @@
             this.metroLabel8.TabIndex = 0;
             this.metroLabel8.Text = "Estado:";
             // 
-            // metroLabel9
+            // call_status_lbl
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel9.Location = new System.Drawing.Point(64, 20);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel9.TabIndex = 1;
-            this.metroLabel9.Text = "Placeholder";
+            this.call_status_lbl.AutoSize = true;
+            this.call_status_lbl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.call_status_lbl.Location = new System.Drawing.Point(64, 20);
+            this.call_status_lbl.Name = "call_status_lbl";
+            this.call_status_lbl.Size = new System.Drawing.Size(89, 19);
+            this.call_status_lbl.TabIndex = 1;
+            this.call_status_lbl.Text = "Placeholder";
             // 
-            // metroLabel10
+            // number_call_lbl
             // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel10.Location = new System.Drawing.Point(223, 20);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel10.TabIndex = 3;
-            this.metroLabel10.Text = "Placeholder";
+            this.number_call_lbl.AutoSize = true;
+            this.number_call_lbl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.number_call_lbl.Location = new System.Drawing.Point(223, 20);
+            this.number_call_lbl.Name = "number_call_lbl";
+            this.number_call_lbl.Size = new System.Drawing.Size(89, 19);
+            this.number_call_lbl.TabIndex = 3;
+            this.number_call_lbl.Text = "Placeholder";
             // 
             // metroLabel11
             // 
@@ -609,15 +613,15 @@
             this.metroLabel11.TabIndex = 2;
             this.metroLabel11.Text = "Numero:";
             // 
-            // metroLabel12
+            // remote_status_lbl
             // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel12.Location = new System.Drawing.Point(223, 48);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel12.TabIndex = 5;
-            this.metroLabel12.Text = "Placeholder";
+            this.remote_status_lbl.AutoSize = true;
+            this.remote_status_lbl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.remote_status_lbl.Location = new System.Drawing.Point(223, 48);
+            this.remote_status_lbl.Name = "remote_status_lbl";
+            this.remote_status_lbl.Size = new System.Drawing.Size(89, 19);
+            this.remote_status_lbl.TabIndex = 5;
+            this.remote_status_lbl.Text = "Placeholder";
             // 
             // metroLabel13
             // 
@@ -628,15 +632,15 @@
             this.metroLabel13.TabIndex = 4;
             this.metroLabel13.Text = "Nombre:";
             // 
-            // metroLabel14
+            // time_status_lbl
             // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel14.Location = new System.Drawing.Point(64, 48);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel14.TabIndex = 7;
-            this.metroLabel14.Text = "Placeholder";
+            this.time_status_lbl.AutoSize = true;
+            this.time_status_lbl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.time_status_lbl.Location = new System.Drawing.Point(64, 48);
+            this.time_status_lbl.Name = "time_status_lbl";
+            this.time_status_lbl.Size = new System.Drawing.Size(89, 19);
+            this.time_status_lbl.TabIndex = 7;
+            this.time_status_lbl.Text = "Placeholder";
             // 
             // metroLabel15
             // 
@@ -682,6 +686,21 @@
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(8, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(340, 236);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(215, 147);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(122, 89);
+            this.panel2.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,6 +722,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -750,13 +770,15 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroLabel time_status_lbl;
         private MetroFramework.Controls.MetroLabel metroLabel15;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel remote_status_lbl;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel number_call_lbl;
         private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel call_status_lbl;
         private MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

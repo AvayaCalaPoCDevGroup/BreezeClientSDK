@@ -231,8 +231,9 @@ namespace BreezeClientSDK
             public void call_Started(object sender, EventArgs e)
             {
                 Call call = (Call)sender;
-                // Called to report that call has started (ie, call is in progress).
-                // Add code here to update the UI as appropriate.
+
+
+
             }
 
             public void call_RemoteAlerting(object sender, EventArgs e)
