@@ -44,7 +44,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.videoselection_combo = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -80,6 +80,24 @@
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.nombreext_lbl = new MetroFramework.Controls.MetroLabel();
+            this.extension_lbl = new MetroFramework.Controls.MetroLabel();
+            this.dominio_lbl = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.gmaps_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.browser_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.notepad_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.other_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.browser_text = new MetroFramework.Controls.MetroTextBox();
+            this.metroButton14 = new MetroFramework.Controls.MetroButton();
+            this.gmaps_txt = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.other_txt = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -87,6 +105,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -135,13 +155,23 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.metroTextBox4);
+            this.groupBox4.Controls.Add(this.other_txt);
+            this.groupBox4.Controls.Add(this.metroTextBox3);
+            this.groupBox4.Controls.Add(this.gmaps_txt);
+            this.groupBox4.Controls.Add(this.metroButton14);
+            this.groupBox4.Controls.Add(this.browser_text);
+            this.groupBox4.Controls.Add(this.other_radio);
+            this.groupBox4.Controls.Add(this.notepad_radio);
+            this.groupBox4.Controls.Add(this.browser_radio);
+            this.groupBox4.Controls.Add(this.gmaps_radio);
             this.groupBox4.Controls.Add(this.webBrowser1);
             this.groupBox4.Location = new System.Drawing.Point(7, 85);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(607, 491);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "GoogleMaps";
+            this.groupBox4.Text = "Asunto";
             // 
             // webBrowser1
             // 
@@ -199,7 +229,7 @@
             this.groupBox1.Controls.Add(this.metroLabel9);
             this.groupBox1.Controls.Add(this.metroButton13);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.metroComboBox2);
+            this.groupBox1.Controls.Add(this.videoselection_combo);
             this.groupBox1.Controls.Add(this.metroComboBox1);
             this.groupBox1.Controls.Add(this.metroLabel5);
             this.groupBox1.Controls.Add(this.metroLabel2);
@@ -306,15 +336,15 @@
             this.metroLabel6.TabIndex = 0;
             this.metroLabel6.Text = "Audio:";
             // 
-            // metroComboBox2
+            // videoselection_combo
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(10, 553);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(171, 29);
-            this.metroComboBox2.TabIndex = 26;
-            this.metroComboBox2.UseSelectable = true;
+            this.videoselection_combo.FormattingEnabled = true;
+            this.videoselection_combo.ItemHeight = 23;
+            this.videoselection_combo.Location = new System.Drawing.Point(10, 553);
+            this.videoselection_combo.Name = "videoselection_combo";
+            this.videoselection_combo.Size = new System.Drawing.Size(171, 29);
+            this.videoselection_combo.TabIndex = 26;
+            this.videoselection_combo.UseSelectable = true;
             // 
             // metroComboBox1
             // 
@@ -358,6 +388,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.call_lbl);
             this.groupBox2.Controls.Add(this.timer_call_lbl);
             this.groupBox2.Controls.Add(this.remote_num_lbl);
@@ -729,27 +761,334 @@
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(668, 18);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel12.TabIndex = 2;
+            this.metroLabel12.Text = "Extensión:";
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(668, 41);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel14.TabIndex = 3;
+            this.metroLabel14.Text = "Nombre:";
+            this.metroLabel14.Click += new System.EventHandler(this.metroLabel14_Click);
+            // 
+            // nombreext_lbl
+            // 
+            this.nombreext_lbl.AutoSize = true;
+            this.nombreext_lbl.Location = new System.Drawing.Point(740, 41);
+            this.nombreext_lbl.Name = "nombreext_lbl";
+            this.nombreext_lbl.Size = new System.Drawing.Size(131, 19);
+            this.nombreext_lbl.TabIndex = 5;
+            this.nombreext_lbl.Text = "Palceholder Nombre";
+            // 
+            // extension_lbl
+            // 
+            this.extension_lbl.AutoSize = true;
+            this.extension_lbl.Location = new System.Drawing.Point(740, 18);
+            this.extension_lbl.Name = "extension_lbl";
+            this.extension_lbl.Size = new System.Drawing.Size(135, 19);
+            this.extension_lbl.TabIndex = 4;
+            this.extension_lbl.Text = "Palceholder Extension";
+            // 
+            // dominio_lbl
+            // 
+            this.dominio_lbl.AutoSize = true;
+            this.dominio_lbl.Location = new System.Drawing.Point(1028, 18);
+            this.dominio_lbl.Name = "dominio_lbl";
+            this.dominio_lbl.Size = new System.Drawing.Size(131, 19);
+            this.dominio_lbl.TabIndex = 9;
+            this.dominio_lbl.Text = "Palceholder Nombre";
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.Location = new System.Drawing.Point(960, 18);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel19.TabIndex = 7;
+            this.metroLabel19.Text = "Dominio:";
+            // 
+            // gmaps_radio
+            // 
+            this.gmaps_radio.AutoSize = true;
+            this.gmaps_radio.Location = new System.Drawing.Point(19, 36);
+            this.gmaps_radio.Name = "gmaps_radio";
+            this.gmaps_radio.Size = new System.Drawing.Size(93, 15);
+            this.gmaps_radio.TabIndex = 1;
+            this.gmaps_radio.Text = "Google Maps";
+            this.gmaps_radio.UseSelectable = true;
+            this.gmaps_radio.CheckedChanged += new System.EventHandler(this.gmaps_radio_CheckedChanged);
+            // 
+            // browser_radio
+            // 
+            this.browser_radio.AutoSize = true;
+            this.browser_radio.Location = new System.Drawing.Point(19, 105);
+            this.browser_radio.Name = "browser_radio";
+            this.browser_radio.Size = new System.Drawing.Size(81, 15);
+            this.browser_radio.TabIndex = 2;
+            this.browser_radio.Text = "Navegador";
+            this.browser_radio.UseSelectable = true;
+            this.browser_radio.CheckedChanged += new System.EventHandler(this.metroRadioButton2_CheckedChanged);
+            // 
+            // notepad_radio
+            // 
+            this.notepad_radio.AutoSize = true;
+            this.notepad_radio.Location = new System.Drawing.Point(19, 201);
+            this.notepad_radio.Name = "notepad_radio";
+            this.notepad_radio.Size = new System.Drawing.Size(96, 15);
+            this.notepad_radio.TabIndex = 3;
+            this.notepad_radio.Text = "Bloc de Notas";
+            this.notepad_radio.UseSelectable = true;
+            this.notepad_radio.CheckedChanged += new System.EventHandler(this.notepad_radio_CheckedChanged);
+            // 
+            // other_radio
+            // 
+            this.other_radio.AutoSize = true;
+            this.other_radio.Location = new System.Drawing.Point(19, 258);
+            this.other_radio.Name = "other_radio";
+            this.other_radio.Size = new System.Drawing.Size(47, 15);
+            this.other_radio.TabIndex = 4;
+            this.other_radio.Text = "Otro";
+            this.other_radio.UseSelectable = true;
+            this.other_radio.CheckedChanged += new System.EventHandler(this.other_radio_CheckedChanged);
+            // 
+            // browser_text
+            // 
+            // 
+            // 
+            // 
+            this.browser_text.CustomButton.Image = null;
+            this.browser_text.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.browser_text.CustomButton.Name = "";
+            this.browser_text.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.browser_text.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.browser_text.CustomButton.TabIndex = 1;
+            this.browser_text.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.browser_text.CustomButton.UseSelectable = true;
+            this.browser_text.CustomButton.Visible = false;
+            this.browser_text.Enabled = false;
+            this.browser_text.Lines = new string[] {
+        "https://www.google.com/maps/search/?api=1&query=?"};
+            this.browser_text.Location = new System.Drawing.Point(19, 126);
+            this.browser_text.MaxLength = 32767;
+            this.browser_text.Name = "browser_text";
+            this.browser_text.PasswordChar = '\0';
+            this.browser_text.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.browser_text.SelectedText = "";
+            this.browser_text.SelectionLength = 0;
+            this.browser_text.SelectionStart = 0;
+            this.browser_text.ShortcutsEnabled = true;
+            this.browser_text.Size = new System.Drawing.Size(526, 23);
+            this.browser_text.TabIndex = 5;
+            this.browser_text.Text = "https://www.google.com/maps/search/?api=1&query=?";
+            this.browser_text.UseSelectable = true;
+            this.browser_text.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.browser_text.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.browser_text.Click += new System.EventHandler(this.metroTextBox1_Click);
+            // 
+            // metroButton14
+            // 
+            this.metroButton14.Location = new System.Drawing.Point(6, 367);
+            this.metroButton14.Name = "metroButton14";
+            this.metroButton14.Size = new System.Drawing.Size(543, 58);
+            this.metroButton14.TabIndex = 6;
+            this.metroButton14.Text = "aplicar";
+            this.metroButton14.UseSelectable = true;
+            // 
+            // gmaps_txt
+            // 
+            // 
+            // 
+            // 
+            this.gmaps_txt.CustomButton.Image = null;
+            this.gmaps_txt.CustomButton.Location = new System.Drawing.Point(503, 1);
+            this.gmaps_txt.CustomButton.Name = "";
+            this.gmaps_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.gmaps_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.gmaps_txt.CustomButton.TabIndex = 1;
+            this.gmaps_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.gmaps_txt.CustomButton.UseSelectable = true;
+            this.gmaps_txt.CustomButton.Visible = false;
+            this.gmaps_txt.Enabled = false;
+            this.gmaps_txt.Lines = new string[] {
+        "https://www.google.com/maps/search/?api=1&query=[Asunto]"};
+            this.gmaps_txt.Location = new System.Drawing.Point(19, 53);
+            this.gmaps_txt.MaxLength = 32767;
+            this.gmaps_txt.Name = "gmaps_txt";
+            this.gmaps_txt.PasswordChar = '\0';
+            this.gmaps_txt.ReadOnly = true;
+            this.gmaps_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.gmaps_txt.SelectedText = "";
+            this.gmaps_txt.SelectionLength = 0;
+            this.gmaps_txt.SelectionStart = 0;
+            this.gmaps_txt.ShortcutsEnabled = true;
+            this.gmaps_txt.Size = new System.Drawing.Size(525, 23);
+            this.gmaps_txt.TabIndex = 7;
+            this.gmaps_txt.Text = "https://www.google.com/maps/search/?api=1&query=[Asunto]";
+            this.gmaps_txt.UseSelectable = true;
+            this.gmaps_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.gmaps_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroTextBox3
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox3.CustomButton.Image = null;
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.metroTextBox3.CustomButton.Name = "";
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox3.CustomButton.TabIndex = 1;
+            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox3.CustomButton.UseSelectable = true;
+            this.metroTextBox3.CustomButton.Visible = false;
+            this.metroTextBox3.Enabled = false;
+            this.metroTextBox3.Lines = new string[] {
+        "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto."};
+            this.metroTextBox3.Location = new System.Drawing.Point(19, 155);
+            this.metroTextBox3.MaxLength = 32767;
+            this.metroTextBox3.Name = "metroTextBox3";
+            this.metroTextBox3.PasswordChar = '\0';
+            this.metroTextBox3.ReadOnly = true;
+            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox3.SelectedText = "";
+            this.metroTextBox3.SelectionLength = 0;
+            this.metroTextBox3.SelectionStart = 0;
+            this.metroTextBox3.ShortcutsEnabled = true;
+            this.metroTextBox3.Size = new System.Drawing.Size(526, 23);
+            this.metroTextBox3.TabIndex = 8;
+            this.metroTextBox3.Text = "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto.";
+            this.metroTextBox3.UseSelectable = true;
+            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox3.Click += new System.EventHandler(this.metroTextBox3_Click);
+            // 
+            // metroTextBox4
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox4.CustomButton.Image = null;
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.metroTextBox4.CustomButton.Name = "";
+            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox4.CustomButton.TabIndex = 1;
+            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox4.CustomButton.UseSelectable = true;
+            this.metroTextBox4.CustomButton.Visible = false;
+            this.metroTextBox4.Enabled = false;
+            this.metroTextBox4.Lines = new string[] {
+        "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto."};
+            this.metroTextBox4.Location = new System.Drawing.Point(18, 308);
+            this.metroTextBox4.MaxLength = 32767;
+            this.metroTextBox4.Name = "metroTextBox4";
+            this.metroTextBox4.PasswordChar = '\0';
+            this.metroTextBox4.ReadOnly = true;
+            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox4.SelectedText = "";
+            this.metroTextBox4.SelectionLength = 0;
+            this.metroTextBox4.SelectionStart = 0;
+            this.metroTextBox4.ShortcutsEnabled = true;
+            this.metroTextBox4.Size = new System.Drawing.Size(526, 23);
+            this.metroTextBox4.TabIndex = 10;
+            this.metroTextBox4.Text = "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto.";
+            this.metroTextBox4.UseSelectable = true;
+            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // other_txt
+            // 
+            // 
+            // 
+            // 
+            this.other_txt.CustomButton.Image = null;
+            this.other_txt.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.other_txt.CustomButton.Name = "";
+            this.other_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.other_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.other_txt.CustomButton.TabIndex = 1;
+            this.other_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.other_txt.CustomButton.UseSelectable = true;
+            this.other_txt.CustomButton.Visible = false;
+            this.other_txt.Enabled = false;
+            this.other_txt.Lines = new string[] {
+        "ping -t ?"};
+            this.other_txt.Location = new System.Drawing.Point(18, 279);
+            this.other_txt.MaxLength = 32767;
+            this.other_txt.Name = "other_txt";
+            this.other_txt.PasswordChar = '\0';
+            this.other_txt.ReadOnly = true;
+            this.other_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.other_txt.SelectedText = "";
+            this.other_txt.SelectionLength = 0;
+            this.other_txt.SelectionStart = 0;
+            this.other_txt.ShortcutsEnabled = true;
+            this.other_txt.Size = new System.Drawing.Size(526, 23);
+            this.other_txt.TabIndex = 9;
+            this.other_txt.Text = "ping -t ?";
+            this.other_txt.UseSelectable = true;
+            this.other_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.other_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(8, 83);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(340, 223);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(217, 217);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(131, 89);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.dominio_lbl);
+            this.Controls.Add(this.metroLabel19);
+            this.Controls.Add(this.nombreext_lbl);
+            this.Controls.Add(this.extension_lbl);
+            this.Controls.Add(this.metroLabel14);
+            this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "Main";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -792,7 +1131,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox videoselection_combo;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -807,5 +1146,23 @@
         private MetroFramework.Controls.MetroLabel remote_num_lbl;
         private MetroFramework.Controls.MetroLabel call_status_lbl;
         private MetroFramework.Controls.MetroLabel call_lbl;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroLabel nombreext_lbl;
+        private MetroFramework.Controls.MetroLabel extension_lbl;
+        private MetroFramework.Controls.MetroLabel dominio_lbl;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
+        private MetroFramework.Controls.MetroButton metroButton14;
+        private MetroFramework.Controls.MetroTextBox browser_text;
+        private MetroFramework.Controls.MetroRadioButton other_radio;
+        private MetroFramework.Controls.MetroRadioButton notepad_radio;
+        private MetroFramework.Controls.MetroRadioButton browser_radio;
+        private MetroFramework.Controls.MetroRadioButton gmaps_radio;
+        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox gmaps_txt;
+        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox other_txt;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

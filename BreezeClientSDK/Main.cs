@@ -1,7 +1,10 @@
 ﻿using Avaya.ClientServices;
 using Avaya.ClientServices.Media;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using System.Windows.Threading;
@@ -21,6 +24,14 @@ namespace BreezeClientSDK
         public CallService callService;
         public User m_User;
         public static VideoInterface VideoInterfaceInstance;
+        public CameraVideoSource cameraVideoSource;
+        public CameraDevice selectedCamera;
+        public static MediaServicesInstance mediaServices;
+        public static Device mediaDevice;
+        public static AudioInterface audioInterface;
+        public static int ChannelID = 0;
+
+
 
         public Main()
         {
@@ -145,9 +156,14 @@ namespace BreezeClientSDK
                     sipUserConfig.UserId = extension;
                     sipUserConfig.Domain = domain;
                     sipUserConfig.CredentialProvider = new UserNamePasswordCredentialProvider(extension, pass, domain);
-                    sipUserConfig.MediaEncryptionTypeArray = new MediaEncryptionType[] {
-      MediaEncryptionType.Aes128Sha1Hmac32, MediaEncryptionType.Aes128Sha1Hmac80, MediaEncryptionType.Aes256Sha1Hmac32, MediaEncryptionType.Aes256Sha1Hmac80, MediaEncryptionType.None
-     };
+                    sipUserConfig.MediaEncryptionTypeArray = new MediaEncryptionType[] 
+                    {
+                        MediaEncryptionType.Aes128Sha1Hmac32,
+                        MediaEncryptionType.Aes128Sha1Hmac80,
+                        MediaEncryptionType.Aes256Sha1Hmac32,
+                        MediaEncryptionType.Aes256Sha1Hmac80,
+                        MediaEncryptionType.None
+                    };
 
                     client.CreateUser(userConfiguration, (user, error) => {
                         if (error != null)
@@ -165,6 +181,13 @@ namespace BreezeClientSDK
 
                         m_User.Start();
 
+                        //Cambios en UI
+
+                        extension_lbl.Text = userConfiguration.SipUserConfiguration.UserId;
+                        nombreext_lbl.Text = userConfiguration.SipUserConfiguration.DisplayName;
+                        dominio_lbl.Text = userConfiguration.SipUserConfiguration.Domain;
+
+                    
                         call_btn.Enabled = true;
                         hang_btn.Enabled = true;
                         AppCallDelegate callServiceDelegate = new AppCallDelegate();
@@ -173,8 +196,24 @@ namespace BreezeClientSDK
                         m_User.CallService.CallRemoved +=
                          new EventHandler<CallEventArgs>(callServiceDelegate.user_CallRemoved);
 
+                        //Agregamos a la coleccion de camaras
+                        cameraVideoSource = new CameraVideoSource();
+                        int conteocamaras = cameraVideoSource.Cameras.Count;
+                        Console.WriteLine("Camaras Dispoibles" + conteocamaras);
 
+                        DataTable TablaCamaras = new DataTable("camaras");
+                        TablaCamaras.Columns.Add("id");
+                        TablaCamaras.Columns.Add("nombre");
 
+                        int i = 0;
+
+                        do
+                        {
+                            Console.WriteLine("Camara: " + cameraVideoSource.Cameras[i].Name );
+                            TablaCamaras.Rows.Add(i, cameraVideoSource.Cameras[i].Name);
+                            i++;
+
+                        } while (i < conteocamaras);
                     });
                 }
 
@@ -196,20 +235,17 @@ namespace BreezeClientSDK
             call.Established += new EventHandler(callDelegate.call_Established);
             call.Ended += new EventHandler<CallEndedEventArgs>(callDelegate.call_Ended);
             call.Subject = subject_out_txt.Text.ToString();
-
+         
             Console.WriteLine(call.Subject);
 
             call.Start();
-
-
-
         }
 
 
 
         private void hang_btn_Click(object sender, EventArgs e)
         {
-            callService.ActiveCall.End();
+            call.End();
 
            
         }
@@ -256,14 +292,19 @@ namespace BreezeClientSDK
 
             public void user_IncomingCall(object sender, CallEventArgs e)
             {
+
+
                 if (e.Call.Subject.Length == 0)
                 {
                     DialogResult result = MessageBox.Show("Datos: \n " + "Numero:" + e.Call.RemoteNumber + "\n Nombre: " + e.Call.RemoteDisplayName + "\n Asunto: " + e.Call.Subject, "Responder", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        mainForm.webBrowser1.Navigate("https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393");
+                        
+                        //mainForm.webBrowser1.Navigate("https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393");
                         e.Call.Accept();
-                       
+
+                
+
                     }
                     else if (result == DialogResult.No)
                     {
@@ -276,10 +317,20 @@ namespace BreezeClientSDK
 
                     if (result == DialogResult.Yes)
                     {
-                        mainForm.webBrowser1.Navigate("http://maps.google.com/maps?q="+e.Call.Subject);
-
-
+                        //mainForm.webBrowser1.Navigate("http://maps.google.com/maps?q="+e.Call.Subject);
                         e.Call.Accept();
+                        
+
+
+                        mainForm.subject_in_txt.Text = e.Call.Subject;
+
+                        if (this.mainForm.gmaps_radio.Enabled)
+                        {
+                            AsuntoViewer gmapsviewer = new AsuntoViewer();
+                            gmapsviewer.Show(); 
+
+
+                        }
 
                     }
                     else if (result == DialogResult.No)
@@ -374,16 +425,73 @@ namespace BreezeClientSDK
 
         private void video_call_btn_Click(object sender, EventArgs e)
         {
+
+            callService = m_User.CallService;
+            call = callService.CreateCall();
             
-            //callService = m_User.CallService;
-            //call = callService.CreateCall();
-            //call.RemoteAddress = number_txt.Text;
-            //call.Start();
+
+            //pictureBox2.ImageLocation = VideoRenderer2;
         }
 
         private void metroLabel12_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gmaps_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gmaps_radio.Enabled)
+            {
+                Console.WriteLine("Gmaps Activado");
+                gmaps_txt.Enabled = true;
+           
+            }
+            else
+            {
+
+            }
+        }
+
+        private void notepad_radio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void other_radio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
+
 }
