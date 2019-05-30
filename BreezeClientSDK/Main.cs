@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
@@ -30,8 +31,7 @@ namespace BreezeClientSDK
         public static Device mediaDevice;
         public static AudioInterface audioInterface;
         public static int ChannelID = 0;
-
-
+        public static string GlobalSubject = "";
 
         public Main()
         {
@@ -156,7 +156,7 @@ namespace BreezeClientSDK
                     sipUserConfig.UserId = extension;
                     sipUserConfig.Domain = domain;
                     sipUserConfig.CredentialProvider = new UserNamePasswordCredentialProvider(extension, pass, domain);
-                    sipUserConfig.MediaEncryptionTypeArray = new MediaEncryptionType[] 
+                    sipUserConfig.MediaEncryptionTypeArray = new MediaEncryptionType[]
                     {
                         MediaEncryptionType.Aes128Sha1Hmac32,
                         MediaEncryptionType.Aes128Sha1Hmac80,
@@ -164,6 +164,8 @@ namespace BreezeClientSDK
                         MediaEncryptionType.Aes256Sha1Hmac80,
                         MediaEncryptionType.None
                     };
+
+
 
                     client.CreateUser(userConfiguration, (user, error) => {
                         if (error != null)
@@ -187,7 +189,7 @@ namespace BreezeClientSDK
                         nombreext_lbl.Text = userConfiguration.SipUserConfiguration.DisplayName;
                         dominio_lbl.Text = userConfiguration.SipUserConfiguration.Domain;
 
-                    
+
                         call_btn.Enabled = true;
                         hang_btn.Enabled = true;
                         AppCallDelegate callServiceDelegate = new AppCallDelegate();
@@ -209,45 +211,34 @@ namespace BreezeClientSDK
 
                         do
                         {
-                            Console.WriteLine("Camara: " + cameraVideoSource.Cameras[i].Name );
+                            Console.WriteLine("Camara: " + cameraVideoSource.Cameras[i].Name);
                             TablaCamaras.Rows.Add(i, cameraVideoSource.Cameras[i].Name);
                             i++;
 
                         } while (i < conteocamaras);
                     });
                 }
-
-
             }
         }
 
 
         private void call_btn_Click(object sender, EventArgs e)
         {
-
             callService = m_User.CallService;
             call = callService.CreateCall();
             call.RemoteAddress = number_txt.Text;
-
             AppCallDelegate callDelegate = new AppCallDelegate();
             call.Started += new EventHandler(callDelegate.call_Started);
             call.RemoteAlerting += new EventHandler<RemoteAlertingEventArgs>(callDelegate.call_RemoteAlerting);
             call.Established += new EventHandler(callDelegate.call_Established);
             call.Ended += new EventHandler<CallEndedEventArgs>(callDelegate.call_Ended);
             call.Subject = subject_out_txt.Text.ToString();
-         
             Console.WriteLine(call.Subject);
-
             call.Start();
         }
-
-
-
         private void hang_btn_Click(object sender, EventArgs e)
         {
-            call.End();
 
-           
         }
 
         public class AppCallDelegate
@@ -292,43 +283,107 @@ namespace BreezeClientSDK
 
             public void user_IncomingCall(object sender, CallEventArgs e)
             {
+                //Llamada ebtrante
 
-
+                //Checamos Asunto
+                //Sin Asunto
                 if (e.Call.Subject.Length == 0)
                 {
                     DialogResult result = MessageBox.Show("Datos: \n " + "Numero:" + e.Call.RemoteNumber + "\n Nombre: " + e.Call.RemoteDisplayName + "\n Asunto: " + e.Call.Subject, "Responder", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        
-                        //mainForm.webBrowser1.Navigate("https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393");
+                        //Se responde la llamada
                         e.Call.Accept();
-
-                
 
                     }
                     else if (result == DialogResult.No)
                     {
+                        //Se Ignora la llamada
                         e.Call.Ignore();
                     }
+
                 }
                 else
                 {
+                    //Lega el Asunto
                     DialogResult result = MessageBox.Show("Datos: \n " + "Numero:" + e.Call.RemoteNumber + "\n Nombre: " + e.Call.RemoteDisplayName + "\n Asunto: " + e.Call.Subject, "Responder", MessageBoxButtons.YesNo);
-
                     if (result == DialogResult.Yes)
                     {
-                        //mainForm.webBrowser1.Navigate("http://maps.google.com/maps?q="+e.Call.Subject);
+                        //aceptamos la llamada
                         e.Call.Accept();
-                        
-
-
+                        //Mandamos el Asunto a la siguiente Forma
                         mainForm.subject_in_txt.Text = e.Call.Subject;
+                        GlobalSubject = mainForm.subject_in_txt.Text;
 
-                        if (this.mainForm.gmaps_radio.Enabled)
+                        //Revisamos que comboBox está activo
+                        if (this.mainForm.gmaps_radio.Checked)
                         {
+                            Console.WriteLine("GMaps seleccionado");
                             AsuntoViewer gmapsviewer = new AsuntoViewer();
-                            gmapsviewer.Show(); 
+                            gmapsviewer.Show();
 
+                        }
+                        else if (this.mainForm.browser_radio.Checked)
+                        {
+
+                            string finalurl = this.mainForm.browser_text.Text.ToString();
+                            Console.WriteLine("Browser seleccionado");
+                            finalurl = finalurl.Replace("?", GlobalSubject);
+                            Console.WriteLine(finalurl);
+                            ProcessStartInfo startInfo = new ProcessStartInfo();
+                            //startInfo.CreateNoWindow = false;
+                            //startInfo.UseShellExecute = false;
+                            startInfo.FileName = finalurl;
+                            //startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                            //startInfo.Arguments = finalurl;
+
+                            try
+                            {
+
+                                using (Process exeProcess = Process.Start(startInfo))
+                                {
+                                    exeProcess.WaitForExit();
+                                }
+                            }
+                            catch
+                            {
+                                // Log error.
+                            }
+
+
+                        }
+
+                        else if (this.mainForm.notepad_radio.Checked)
+                        {
+                            Console.WriteLine("Bloc de Notas seleccionado");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Otro seleccionado");
+                            string finalurl = this.mainForm.browser_text.Text.ToString();
+                            Console.WriteLine("Browser seleccionado");
+                            finalurl = finalurl.Replace("?", GlobalSubject);
+                            Console.WriteLine(finalurl);
+                            ProcessStartInfo startInfo = new ProcessStartInfo();
+                            //startInfo.CreateNoWindow = false;
+                            //startInfo.UseShellExecute = false;
+                            startInfo.FileName = "chrome.exe";
+                            //startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                            startInfo.Arguments = finalurl;
+
+                            try
+                            {
+
+                                using (Process exeProcess = Process.Start(startInfo))
+                                {
+                                    exeProcess.WaitForExit();
+                                }
+                            }
+                            catch
+                            {
+                                // Log error.
+                            }
 
                         }
 
@@ -341,13 +396,22 @@ namespace BreezeClientSDK
             }
             public void user_CallRemoved(object sender, CallEventArgs e)
             {
-                // Called to report that the call has been removed before 
-                // answer.
-                // Add code here to handle the removed call, eg, 
-                // update UI to remove the call... etc.
+                Console.WriteLine("La llamada ha sido rechazada antes de ser repsondida");
             }
 
         }
+
+        public class VideoExample
+        {
+            private CameraVideoSource cameraSource = null;
+            private CameraDevice selectedCamera = null;
+            private VideoRenderer2 remoteRenderer = null;
+            private VideoRenderer2 previewRenderer = null;
+
+           
+
+        }
+
 
         private void metroLabel4_Click(object sender, EventArgs e)
         {
@@ -409,6 +473,7 @@ namespace BreezeClientSDK
         private void metroButton11_Click(object sender, EventArgs e)
         {
             number_txt.AppendText("0");
+
         }
 
         private void metroButton13_Click(object sender, EventArgs e)
@@ -428,10 +493,41 @@ namespace BreezeClientSDK
 
             callService = m_User.CallService;
             call = callService.CreateCall();
-            
+
+
+            CameraVideoSource cameraVideoSource = new CameraVideoSource();
+            CameraDevice selectedCamera = cameraVideoSource.Cameras[0];
+
+            VideoInterface videoInterface = client.MediaServices.getVideoInterface();
+            call.SetVideoMode(VideoMode.SendReceive, (error) =>
+            {
+                if (error != null)
+                {
+                    Console.Write("Set video mode error : " + error.Message);
+                }
+                else
+                {
+                    Console.Write("Set video mode success");
+
+                    cameraVideoSource.Start(selectedCamera, new VideoCaptureFormat(700, 400, 0, 30), (result) =>
+                    {
+                        if (result == CameraVideoSourceResult.Success)
+                        {
+                            Console.WriteLine("CameraCaptureStart Success");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error :" + result.ToString());
+                        }
+                    });
+                }
+            });
+
+
 
             //pictureBox2.ImageLocation = VideoRenderer2;
         }
+
 
         private void metroLabel12_Click(object sender, EventArgs e)
         {
@@ -440,6 +536,7 @@ namespace BreezeClientSDK
 
         private void Main_Load(object sender, EventArgs e)
         {
+            gmaps_radio.Checked = true;
 
         }
 
@@ -460,8 +557,11 @@ namespace BreezeClientSDK
 
         private void metroRadioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            browser_text.Enabled = true;
+            browser_text.ReadOnly = false;
 
-        }
+            gmaps_txt.Enabled = false;
+            other_txt.Enabled = false;        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -470,16 +570,7 @@ namespace BreezeClientSDK
 
         private void gmaps_radio_CheckedChanged(object sender, EventArgs e)
         {
-            if (gmaps_radio.Enabled)
-            {
-                Console.WriteLine("Gmaps Activado");
-                gmaps_txt.Enabled = true;
-           
-            }
-            else
-            {
-
-            }
+       
         }
 
         private void notepad_radio_CheckedChanged(object sender, EventArgs e)
@@ -491,7 +582,25 @@ namespace BreezeClientSDK
         {
 
         }
+
+        private void metroButton15_Click(object sender, EventArgs e)
+        {
+            client.RemoveUser(m_User, true);
+            client.Shutdown(true);
+            client.Shutdown(false);
+            
+
+        }
+
+        private void metroTabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+   
     }
+
+
 
 
 }

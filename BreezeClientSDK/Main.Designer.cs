@@ -32,6 +32,16 @@
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.other_txt = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.gmaps_txt = new MetroFramework.Controls.MetroTextBox();
+            this.metroButton14 = new MetroFramework.Controls.MetroButton();
+            this.browser_text = new MetroFramework.Controls.MetroTextBox();
+            this.other_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.notepad_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.browser_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.gmaps_radio = new MetroFramework.Controls.MetroRadioButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.subject_in_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -50,6 +60,8 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.video_call_btn = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.call_lbl = new MetroFramework.Controls.MetroLabel();
             this.timer_call_lbl = new MetroFramework.Controls.MetroLabel();
             this.remote_num_lbl = new MetroFramework.Controls.MetroLabel();
@@ -86,18 +98,10 @@
             this.extension_lbl = new MetroFramework.Controls.MetroLabel();
             this.dominio_lbl = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.gmaps_radio = new MetroFramework.Controls.MetroRadioButton();
-            this.browser_radio = new MetroFramework.Controls.MetroRadioButton();
-            this.notepad_radio = new MetroFramework.Controls.MetroRadioButton();
-            this.other_radio = new MetroFramework.Controls.MetroRadioButton();
-            this.browser_text = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton14 = new MetroFramework.Controls.MetroButton();
-            this.gmaps_txt = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.other_txt = new MetroFramework.Controls.MetroTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.metroButton15 = new MetroFramework.Controls.MetroButton();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -105,8 +109,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -139,6 +143,7 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             // 
             // groupBox5
             // 
@@ -148,13 +153,16 @@
             this.groupBox5.Controls.Add(this.metroLabel1);
             this.groupBox5.Location = new System.Drawing.Point(580, 7);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(620, 582);
+            this.groupBox5.Size = new System.Drawing.Size(620, 591);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Estado Actual";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.metroTextBox1);
             this.groupBox4.Controls.Add(this.metroTextBox4);
             this.groupBox4.Controls.Add(this.other_txt);
             this.groupBox4.Controls.Add(this.metroTextBox3);
@@ -172,6 +180,232 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Asunto";
+            // 
+            // metroTextBox4
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox4.CustomButton.Image = null;
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.metroTextBox4.CustomButton.Name = "";
+            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox4.CustomButton.TabIndex = 1;
+            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox4.CustomButton.UseSelectable = true;
+            this.metroTextBox4.CustomButton.Visible = false;
+            this.metroTextBox4.Enabled = false;
+            this.metroTextBox4.Lines = new string[] {
+        "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto en los" +
+            " argumentos"};
+            this.metroTextBox4.Location = new System.Drawing.Point(19, 378);
+            this.metroTextBox4.MaxLength = 32767;
+            this.metroTextBox4.Name = "metroTextBox4";
+            this.metroTextBox4.PasswordChar = '\0';
+            this.metroTextBox4.ReadOnly = true;
+            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox4.SelectedText = "";
+            this.metroTextBox4.SelectionLength = 0;
+            this.metroTextBox4.SelectionStart = 0;
+            this.metroTextBox4.ShortcutsEnabled = true;
+            this.metroTextBox4.Size = new System.Drawing.Size(526, 23);
+            this.metroTextBox4.TabIndex = 10;
+            this.metroTextBox4.Text = "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto en los" +
+    " argumentos";
+            this.metroTextBox4.UseSelectable = true;
+            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // other_txt
+            // 
+            // 
+            // 
+            // 
+            this.other_txt.CustomButton.Image = null;
+            this.other_txt.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.other_txt.CustomButton.Name = "";
+            this.other_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.other_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.other_txt.CustomButton.TabIndex = 1;
+            this.other_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.other_txt.CustomButton.UseSelectable = true;
+            this.other_txt.CustomButton.Visible = false;
+            this.other_txt.Enabled = false;
+            this.other_txt.Lines = new string[] {
+        "ping.exe"};
+            this.other_txt.Location = new System.Drawing.Point(19, 298);
+            this.other_txt.MaxLength = 32767;
+            this.other_txt.Name = "other_txt";
+            this.other_txt.PasswordChar = '\0';
+            this.other_txt.ReadOnly = true;
+            this.other_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.other_txt.SelectedText = "";
+            this.other_txt.SelectionLength = 0;
+            this.other_txt.SelectionStart = 0;
+            this.other_txt.ShortcutsEnabled = true;
+            this.other_txt.Size = new System.Drawing.Size(526, 23);
+            this.other_txt.TabIndex = 9;
+            this.other_txt.Text = "ping.exe";
+            this.other_txt.UseSelectable = true;
+            this.other_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.other_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroTextBox3
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox3.CustomButton.Image = null;
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.metroTextBox3.CustomButton.Name = "";
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox3.CustomButton.TabIndex = 1;
+            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox3.CustomButton.UseSelectable = true;
+            this.metroTextBox3.CustomButton.Visible = false;
+            this.metroTextBox3.Enabled = false;
+            this.metroTextBox3.Lines = new string[] {
+        "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto."};
+            this.metroTextBox3.Location = new System.Drawing.Point(19, 155);
+            this.metroTextBox3.MaxLength = 32767;
+            this.metroTextBox3.Name = "metroTextBox3";
+            this.metroTextBox3.PasswordChar = '\0';
+            this.metroTextBox3.ReadOnly = true;
+            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox3.SelectedText = "";
+            this.metroTextBox3.SelectionLength = 0;
+            this.metroTextBox3.SelectionStart = 0;
+            this.metroTextBox3.ShortcutsEnabled = true;
+            this.metroTextBox3.Size = new System.Drawing.Size(526, 23);
+            this.metroTextBox3.TabIndex = 8;
+            this.metroTextBox3.Text = "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto.";
+            this.metroTextBox3.UseSelectable = true;
+            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox3.Click += new System.EventHandler(this.metroTextBox3_Click);
+            // 
+            // gmaps_txt
+            // 
+            // 
+            // 
+            // 
+            this.gmaps_txt.CustomButton.Image = null;
+            this.gmaps_txt.CustomButton.Location = new System.Drawing.Point(503, 1);
+            this.gmaps_txt.CustomButton.Name = "";
+            this.gmaps_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.gmaps_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.gmaps_txt.CustomButton.TabIndex = 1;
+            this.gmaps_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.gmaps_txt.CustomButton.UseSelectable = true;
+            this.gmaps_txt.CustomButton.Visible = false;
+            this.gmaps_txt.Enabled = false;
+            this.gmaps_txt.Lines = new string[] {
+        "https://www.google.com/maps/search/?api=1&query=[Asunto]"};
+            this.gmaps_txt.Location = new System.Drawing.Point(19, 53);
+            this.gmaps_txt.MaxLength = 32767;
+            this.gmaps_txt.Name = "gmaps_txt";
+            this.gmaps_txt.PasswordChar = '\0';
+            this.gmaps_txt.ReadOnly = true;
+            this.gmaps_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.gmaps_txt.SelectedText = "";
+            this.gmaps_txt.SelectionLength = 0;
+            this.gmaps_txt.SelectionStart = 0;
+            this.gmaps_txt.ShortcutsEnabled = true;
+            this.gmaps_txt.Size = new System.Drawing.Size(525, 23);
+            this.gmaps_txt.TabIndex = 7;
+            this.gmaps_txt.Text = "https://www.google.com/maps/search/?api=1&query=[Asunto]";
+            this.gmaps_txt.UseSelectable = true;
+            this.gmaps_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.gmaps_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroButton14
+            // 
+            this.metroButton14.Location = new System.Drawing.Point(18, 407);
+            this.metroButton14.Name = "metroButton14";
+            this.metroButton14.Size = new System.Drawing.Size(543, 58);
+            this.metroButton14.TabIndex = 6;
+            this.metroButton14.Text = "Guardar Cambios";
+            this.metroButton14.UseSelectable = true;
+            // 
+            // browser_text
+            // 
+            // 
+            // 
+            // 
+            this.browser_text.CustomButton.Image = null;
+            this.browser_text.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.browser_text.CustomButton.Name = "";
+            this.browser_text.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.browser_text.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.browser_text.CustomButton.TabIndex = 1;
+            this.browser_text.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.browser_text.CustomButton.UseSelectable = true;
+            this.browser_text.CustomButton.Visible = false;
+            this.browser_text.Enabled = false;
+            this.browser_text.Lines = new string[] {
+        "https://www.google.com/maps/search/?api=1&query=?"};
+            this.browser_text.Location = new System.Drawing.Point(19, 126);
+            this.browser_text.MaxLength = 32767;
+            this.browser_text.Name = "browser_text";
+            this.browser_text.PasswordChar = '\0';
+            this.browser_text.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.browser_text.SelectedText = "";
+            this.browser_text.SelectionLength = 0;
+            this.browser_text.SelectionStart = 0;
+            this.browser_text.ShortcutsEnabled = true;
+            this.browser_text.Size = new System.Drawing.Size(526, 23);
+            this.browser_text.TabIndex = 5;
+            this.browser_text.Text = "https://www.google.com/maps/search/?api=1&query=?";
+            this.browser_text.UseSelectable = true;
+            this.browser_text.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.browser_text.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.browser_text.Click += new System.EventHandler(this.metroTextBox1_Click);
+            // 
+            // other_radio
+            // 
+            this.other_radio.AutoSize = true;
+            this.other_radio.Location = new System.Drawing.Point(19, 258);
+            this.other_radio.Name = "other_radio";
+            this.other_radio.Size = new System.Drawing.Size(47, 15);
+            this.other_radio.TabIndex = 4;
+            this.other_radio.Text = "Otro";
+            this.other_radio.UseSelectable = true;
+            this.other_radio.CheckedChanged += new System.EventHandler(this.other_radio_CheckedChanged);
+            // 
+            // notepad_radio
+            // 
+            this.notepad_radio.AutoSize = true;
+            this.notepad_radio.Location = new System.Drawing.Point(19, 201);
+            this.notepad_radio.Name = "notepad_radio";
+            this.notepad_radio.Size = new System.Drawing.Size(96, 15);
+            this.notepad_radio.TabIndex = 3;
+            this.notepad_radio.Text = "Bloc de Notas";
+            this.notepad_radio.UseSelectable = true;
+            this.notepad_radio.CheckedChanged += new System.EventHandler(this.notepad_radio_CheckedChanged);
+            // 
+            // browser_radio
+            // 
+            this.browser_radio.AutoSize = true;
+            this.browser_radio.Location = new System.Drawing.Point(19, 105);
+            this.browser_radio.Name = "browser_radio";
+            this.browser_radio.Size = new System.Drawing.Size(81, 15);
+            this.browser_radio.TabIndex = 2;
+            this.browser_radio.Text = "Navegador";
+            this.browser_radio.UseSelectable = true;
+            this.browser_radio.CheckedChanged += new System.EventHandler(this.metroRadioButton2_CheckedChanged);
+            // 
+            // gmaps_radio
+            // 
+            this.gmaps_radio.AutoSize = true;
+            this.gmaps_radio.Location = new System.Drawing.Point(19, 36);
+            this.gmaps_radio.Name = "gmaps_radio";
+            this.gmaps_radio.Size = new System.Drawing.Size(93, 15);
+            this.gmaps_radio.TabIndex = 1;
+            this.gmaps_radio.Text = "Google Maps";
+            this.gmaps_radio.UseSelectable = true;
+            this.gmaps_radio.CheckedChanged += new System.EventHandler(this.gmaps_radio_CheckedChanged);
             // 
             // webBrowser1
             // 
@@ -404,6 +638,23 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado de la Llamada";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(217, 217);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(131, 89);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(8, 83);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(340, 223);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // call_lbl
             // 
@@ -816,252 +1067,75 @@
             this.metroLabel19.TabIndex = 7;
             this.metroLabel19.Text = "Dominio:";
             // 
-            // gmaps_radio
+            // metroButton15
             // 
-            this.gmaps_radio.AutoSize = true;
-            this.gmaps_radio.Location = new System.Drawing.Point(19, 36);
-            this.gmaps_radio.Name = "gmaps_radio";
-            this.gmaps_radio.Size = new System.Drawing.Size(93, 15);
-            this.gmaps_radio.TabIndex = 1;
-            this.gmaps_radio.Text = "Google Maps";
-            this.gmaps_radio.UseSelectable = true;
-            this.gmaps_radio.CheckedChanged += new System.EventHandler(this.gmaps_radio_CheckedChanged);
+            this.metroButton15.Location = new System.Drawing.Point(392, 24);
+            this.metroButton15.Name = "metroButton15";
+            this.metroButton15.Size = new System.Drawing.Size(270, 33);
+            this.metroButton15.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroButton15.TabIndex = 10;
+            this.metroButton15.Text = "Cerrar Sesión";
+            this.metroButton15.UseSelectable = true;
+            this.metroButton15.Click += new System.EventHandler(this.metroButton15_Click);
             // 
-            // browser_radio
-            // 
-            this.browser_radio.AutoSize = true;
-            this.browser_radio.Location = new System.Drawing.Point(19, 105);
-            this.browser_radio.Name = "browser_radio";
-            this.browser_radio.Size = new System.Drawing.Size(81, 15);
-            this.browser_radio.TabIndex = 2;
-            this.browser_radio.Text = "Navegador";
-            this.browser_radio.UseSelectable = true;
-            this.browser_radio.CheckedChanged += new System.EventHandler(this.metroRadioButton2_CheckedChanged);
-            // 
-            // notepad_radio
-            // 
-            this.notepad_radio.AutoSize = true;
-            this.notepad_radio.Location = new System.Drawing.Point(19, 201);
-            this.notepad_radio.Name = "notepad_radio";
-            this.notepad_radio.Size = new System.Drawing.Size(96, 15);
-            this.notepad_radio.TabIndex = 3;
-            this.notepad_radio.Text = "Bloc de Notas";
-            this.notepad_radio.UseSelectable = true;
-            this.notepad_radio.CheckedChanged += new System.EventHandler(this.notepad_radio_CheckedChanged);
-            // 
-            // other_radio
-            // 
-            this.other_radio.AutoSize = true;
-            this.other_radio.Location = new System.Drawing.Point(19, 258);
-            this.other_radio.Name = "other_radio";
-            this.other_radio.Size = new System.Drawing.Size(47, 15);
-            this.other_radio.TabIndex = 4;
-            this.other_radio.Text = "Otro";
-            this.other_radio.UseSelectable = true;
-            this.other_radio.CheckedChanged += new System.EventHandler(this.other_radio_CheckedChanged);
-            // 
-            // browser_text
+            // metroTextBox1
             // 
             // 
             // 
             // 
-            this.browser_text.CustomButton.Image = null;
-            this.browser_text.CustomButton.Location = new System.Drawing.Point(504, 1);
-            this.browser_text.CustomButton.Name = "";
-            this.browser_text.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.browser_text.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.browser_text.CustomButton.TabIndex = 1;
-            this.browser_text.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.browser_text.CustomButton.UseSelectable = true;
-            this.browser_text.CustomButton.Visible = false;
-            this.browser_text.Enabled = false;
-            this.browser_text.Lines = new string[] {
-        "https://www.google.com/maps/search/?api=1&query=?"};
-            this.browser_text.Location = new System.Drawing.Point(19, 126);
-            this.browser_text.MaxLength = 32767;
-            this.browser_text.Name = "browser_text";
-            this.browser_text.PasswordChar = '\0';
-            this.browser_text.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.browser_text.SelectedText = "";
-            this.browser_text.SelectionLength = 0;
-            this.browser_text.SelectionStart = 0;
-            this.browser_text.ShortcutsEnabled = true;
-            this.browser_text.Size = new System.Drawing.Size(526, 23);
-            this.browser_text.TabIndex = 5;
-            this.browser_text.Text = "https://www.google.com/maps/search/?api=1&query=?";
-            this.browser_text.UseSelectable = true;
-            this.browser_text.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.browser_text.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.browser_text.Click += new System.EventHandler(this.metroTextBox1_Click);
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(504, 1);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.Enabled = false;
+            this.metroTextBox1.Lines = new string[] {
+        "-t ?"};
+            this.metroTextBox1.Location = new System.Drawing.Point(18, 349);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ReadOnly = true;
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(526, 23);
+            this.metroTextBox1.TabIndex = 11;
+            this.metroTextBox1.Text = "-t ?";
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton14
+            // label1
             // 
-            this.metroButton14.Location = new System.Drawing.Point(6, 367);
-            this.metroButton14.Name = "metroButton14";
-            this.metroButton14.Size = new System.Drawing.Size(543, 58);
-            this.metroButton14.TabIndex = 6;
-            this.metroButton14.Text = "aplicar";
-            this.metroButton14.UseSelectable = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 276);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ejecutable";
             // 
-            // gmaps_txt
+            // label2
             // 
-            // 
-            // 
-            // 
-            this.gmaps_txt.CustomButton.Image = null;
-            this.gmaps_txt.CustomButton.Location = new System.Drawing.Point(503, 1);
-            this.gmaps_txt.CustomButton.Name = "";
-            this.gmaps_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.gmaps_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.gmaps_txt.CustomButton.TabIndex = 1;
-            this.gmaps_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.gmaps_txt.CustomButton.UseSelectable = true;
-            this.gmaps_txt.CustomButton.Visible = false;
-            this.gmaps_txt.Enabled = false;
-            this.gmaps_txt.Lines = new string[] {
-        "https://www.google.com/maps/search/?api=1&query=[Asunto]"};
-            this.gmaps_txt.Location = new System.Drawing.Point(19, 53);
-            this.gmaps_txt.MaxLength = 32767;
-            this.gmaps_txt.Name = "gmaps_txt";
-            this.gmaps_txt.PasswordChar = '\0';
-            this.gmaps_txt.ReadOnly = true;
-            this.gmaps_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.gmaps_txt.SelectedText = "";
-            this.gmaps_txt.SelectionLength = 0;
-            this.gmaps_txt.SelectionStart = 0;
-            this.gmaps_txt.ShortcutsEnabled = true;
-            this.gmaps_txt.Size = new System.Drawing.Size(525, 23);
-            this.gmaps_txt.TabIndex = 7;
-            this.gmaps_txt.Text = "https://www.google.com/maps/search/?api=1&query=[Asunto]";
-            this.gmaps_txt.UseSelectable = true;
-            this.gmaps_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.gmaps_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox3
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(504, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.Enabled = false;
-            this.metroTextBox3.Lines = new string[] {
-        "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto."};
-            this.metroTextBox3.Location = new System.Drawing.Point(19, 155);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ReadOnly = true;
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(526, 23);
-            this.metroTextBox3.TabIndex = 8;
-            this.metroTextBox3.Text = "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto.";
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox3.Click += new System.EventHandler(this.metroTextBox3_Click);
-            // 
-            // metroTextBox4
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(504, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Enabled = false;
-            this.metroTextBox4.Lines = new string[] {
-        "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto."};
-            this.metroTextBox4.Location = new System.Drawing.Point(18, 308);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.ReadOnly = true;
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(526, 23);
-            this.metroTextBox4.TabIndex = 10;
-            this.metroTextBox4.Text = "Agrega el signo de interrogacion donde quieres que se concatene  el Asunto.";
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // other_txt
-            // 
-            // 
-            // 
-            // 
-            this.other_txt.CustomButton.Image = null;
-            this.other_txt.CustomButton.Location = new System.Drawing.Point(504, 1);
-            this.other_txt.CustomButton.Name = "";
-            this.other_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.other_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.other_txt.CustomButton.TabIndex = 1;
-            this.other_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.other_txt.CustomButton.UseSelectable = true;
-            this.other_txt.CustomButton.Visible = false;
-            this.other_txt.Enabled = false;
-            this.other_txt.Lines = new string[] {
-        "ping -t ?"};
-            this.other_txt.Location = new System.Drawing.Point(18, 279);
-            this.other_txt.MaxLength = 32767;
-            this.other_txt.Name = "other_txt";
-            this.other_txt.PasswordChar = '\0';
-            this.other_txt.ReadOnly = true;
-            this.other_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.other_txt.SelectedText = "";
-            this.other_txt.SelectionLength = 0;
-            this.other_txt.SelectionStart = 0;
-            this.other_txt.ShortcutsEnabled = true;
-            this.other_txt.Size = new System.Drawing.Size(526, 23);
-            this.other_txt.TabIndex = 9;
-            this.other_txt.Text = "ping -t ?";
-            this.other_txt.UseSelectable = true;
-            this.other_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.other_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(8, 83);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(340, 223);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(217, 217);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 89);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 333);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Argumentos";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.metroButton15);
             this.Controls.Add(this.dominio_lbl);
             this.Controls.Add(this.metroLabel19);
             this.Controls.Add(this.nombreext_lbl);
@@ -1085,8 +1159,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1164,5 +1238,9 @@
         private MetroFramework.Controls.MetroTextBox other_txt;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton metroButton15;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }

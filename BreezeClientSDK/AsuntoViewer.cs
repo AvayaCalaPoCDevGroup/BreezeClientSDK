@@ -19,6 +19,12 @@ namespace BreezeClientSDK
 
         private void AsuntoViewer_Load(object sender, EventArgs e)
         {
+            webBrowser1.Navigate("http://maps.google.com/maps?q="+Main.GlobalSubject);
+
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
 
         }
     }

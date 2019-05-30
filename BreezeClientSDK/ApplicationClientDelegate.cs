@@ -17,15 +17,12 @@ namespace BreezeClientSDK
 
         public void client_UserRemoved(object sender, UserEventArgs e)
         {
-            // Called to report the specified user has 
-            // been removed
-            // Add code here to handle user removed
+            Console.WriteLine("El Usuario se ha cerrado correctamente");
         }
 
         public void client_ShutdownCompleted(object sender, EventArgs e)
         {
-            // Called to report Client shutdown has been completed
-            // Add code here to handle shutdown of the Client
+            Main.ActiveForm.Close();
         }
     }
 }
