@@ -1,5 +1,7 @@
 ﻿using Avaya.ClientServices;
 using Avaya.ClientServices.Media;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +11,8 @@ using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using System.Windows.Threading;
+
+
 
 namespace BreezeClientSDK
 {
@@ -32,6 +36,7 @@ namespace BreezeClientSDK
         public static AudioInterface audioInterface;
         public static int ChannelID = 0;
         public static string GlobalSubject = "";
+        public AppCallDelegate callDelegate;
 
         public Main()
         {
@@ -192,7 +197,7 @@ namespace BreezeClientSDK
 
                         call_btn.Enabled = true;
                         hang_btn.Enabled = true;
-                        AppCallDelegate callServiceDelegate = new AppCallDelegate();
+                         callServiceDelegate = new AppCallDelegate();
                         m_User.CallService.IncomingCallReceived +=
                          new EventHandler<CallEventArgs>(callServiceDelegate.user_IncomingCall);
                         m_User.CallService.CallRemoved +=
@@ -283,6 +288,11 @@ namespace BreezeClientSDK
 
             public void user_IncomingCall(object sender, CallEventArgs e)
             {
+
+
+
+                //
+
                 //Llamada ebtrante
 
                 //Checamos Asunto
@@ -294,6 +304,12 @@ namespace BreezeClientSDK
                     {
                         //Se responde la llamada
                         e.Call.Accept();
+
+                        //Actualizar UI con datos de la llamada
+
+
+                        this.mainForm.remote_num_lbl.Text = e.Call.RemoteNumber.ToString();
+                        this.mainForm.call_lbl.Text = e.Call.RemoteDisplayName.ToString();
 
                     }
                     else if (result == DialogResult.No)
@@ -311,16 +327,35 @@ namespace BreezeClientSDK
                     {
                         //aceptamos la llamada
                         e.Call.Accept();
+
                         //Mandamos el Asunto a la siguiente Forma
                         mainForm.subject_in_txt.Text = e.Call.Subject;
                         GlobalSubject = mainForm.subject_in_txt.Text;
+                        mainForm.micro_mute_toggle.Checked = true;
+
+                        if (mainForm.micro_mute_toggle.Checked)
+                        {
+
+                        }
+                        else
+                        {
+                            e.Call.MuteAudio(true, );
+                        }
+
+
+
+
+                        //Actualizar UI con datos de la llamada
+
+
+                        this.mainForm.remote_num_lbl.Text = e.Call.RemoteNumber.ToString();
+                        this.mainForm.call_lbl.Text = e.Call.RemoteDisplayName.ToString();
 
                         //Revisamos que comboBox está activo
                         if (this.mainForm.gmaps_radio.Checked)
                         {
                             Console.WriteLine("GMaps seleccionado");
-                            AsuntoViewer gmapsviewer = new AsuntoViewer();
-                            gmapsviewer.Show();
+                            this.mainForm.webBrowser2.Navigate("http://maps.google.com/maps?q=" + Main.GlobalSubject);
 
                         }
                         else if (this.mainForm.browser_radio.Checked)
@@ -408,8 +443,7 @@ namespace BreezeClientSDK
             private VideoRenderer2 remoteRenderer = null;
             private VideoRenderer2 previewRenderer = null;
 
-           
-
+         
         }
 
 
@@ -597,7 +631,36 @@ namespace BreezeClientSDK
 
         }
 
-   
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton16_Click(object sender, EventArgs e)
+        {
+            var client = new RestClient("https://reqres.in/api/products/");
+
+            var request = new RestRequest("3", DataFormat.Json);
+            
+
+            var response = client.Get(request);
+            Console.WriteLine(response.Content);
+            var json = response.Content;
+            DataTable dt = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
+            dataGridView1.DataSource = dt;
+
+
+
+
+
+
+
+        }
+
+        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
